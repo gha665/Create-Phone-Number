@@ -1,13 +1,15 @@
-function sumTwoSmallestNumbers(numbers) {  
- 
-  let onlyPositiveNumbers = [];
-  for(let i = 0; i < numbers.length; i++) {
-      if(numbers[i] >= 0) {
-        onlyPositiveNumbers.push(numbers[i]);
-      }
-  }
- 
-  onlyPositiveNumbers.sort((a, b) => a - b);
+function createPhoneNumber(numbers){
   
-  return onlyPositiveNumbers[0] + onlyPositiveNumbers[1]; 
+  numbers = numbers.join("");
+  let phoneNumber = "";
+  
+  phoneNumber += "(";
+  phoneNumber += numbers.substring(0, 3);
+  phoneNumber += ") ";
+  phoneNumber += numbers.substring(3, 6);
+  phoneNumber += "-";
+  phoneNumber += numbers.substring(6);
+  
+  return phoneNumber;
+  
 }
